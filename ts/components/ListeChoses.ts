@@ -1,6 +1,6 @@
-import {Component, Input, OnInit}               from "@angular/core";
-import {Chose, ListeChoses as ListeChosesNF} 	from "@NoyauFonctionnel/nf";
-import {ListeChosesService}                     from "@NoyauFonctionnel/service";
+import {Component, Input, OnInit} from "@angular/core";
+import {Chose, ListeChoses as ListeChosesNF} from "@NF/nf";
+import {ListeChosesService} from "@NF/service";
 
 const htmlTemplate = `
 	<section class="todoapp">
@@ -11,7 +11,7 @@ const htmlTemplate = `
 			</form>
 		</header>
 		<section class="main">
-			<input  class="toggle-all" 
+			<input  class="toggle-all"
 			        type="checkbox"
 			        />
 			<label for="toggle-all">Mark all as complete</label>
@@ -42,24 +42,31 @@ const htmlTemplate = `
 	</section>
 `;
 
-type filterChose = (c : Chose) => boolean;
+type filterChose = (c: Chose) => boolean;
+
 @Component({
-  selector		: "liste-choses",
-  template		: htmlTemplate
+    selector: "liste-choses",
+    template: htmlTemplate
 })
 export class ListeChoses implements OnInit {
-    @Input() titre	: string;
-    public nf       : ListeChosesNF;
-    private choses  : Chose[] = [];
-	constructor		(private serviceListe: ListeChosesService) {
-	};
+    @Input() titre: string;
+    public nf: ListeChosesNF;
+    private choses: Chose[] = [];
+    private currentFilter: filterChose;
+
+    constructor(private serviceListe: ListeChosesService) {
+        console.log("serviceListe:", this.serviceListe);
+        console.log("currentFilter:", this.currentFilter);
+    }
+
     ngOnInit(): void {
-        ListeChosesService.getData().then( (nf) => {
-            this.nf     = nf;
+        ListeChosesService.getData().then((nf) => {
+            this.nf = nf;
             this.choses = nf.choses;
         });
     }
-    getChoses() : Chose[] {
+
+    getChoses(): Chose[] {
         return this.choses;
     }
 }

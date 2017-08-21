@@ -2,12 +2,12 @@ import { Component, NgModule }      from "@angular/core";
 import { BrowserModule }            from "@angular/platform-browser";
 import { ListeChosesModule }        from "./components/ListeChosesModule";
 import { platformBrowserDynamic }   from "@angular/platform-browser-dynamic";
-import { ListeChosesIHM     } from "./sansFramework/listeChoses_IHM";
-import { ListeChosesService } from "@NoyauFonctionnel/service";
+import { ListeChosesIHM     }       from "./sansFramework/listeChoses_IHM";
+import { ListeChosesService }       from "@NF/service";
 
 
 let PromesseDocumentPret = new Promise( (resolve) => {
-    if(document.readyState === "complete") {
+    if (document.readyState === "complete") {
         resolve();
     } else {
         document.body.onload = () => resolve();

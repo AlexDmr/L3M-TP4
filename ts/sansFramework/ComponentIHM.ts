@@ -1,6 +1,6 @@
 export class ComponentIHM {
     root: Element;
-    NF  : any;
+    NF: any;
     constructor(NF, root: Element) {
         this.NF   = NF;
         this.root = root;

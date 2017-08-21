@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "noUnusedParameters": false,
+    "noUnusedLocals": true,
+    "target": "es2015",
     "module": "system",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
@@ -9,14 +11,18 @@
     "removeComments": false,
     "noImplicitAny": false,
     "suppressImplicitAnyIndexErrors": true,
-    "baseUrl": "./ts",
-    "rootDir": "./ts",
+    "outDir": "./js",
+    "watch": true,
+    "baseUrl": ".",
     "paths": {
-      "@NoyauFonctionnel/*": ["./nf/*"]
-    }
+      "@NF/*": ["./ts/nf/*"]
+    },
+    "types": [
+      "jasminewd2",
+      "node"
+    ]
   },
   "exclude": [
-    "node_modules",
-    "!node_modules/@types"
+    "node_modules"
   ]
 }
