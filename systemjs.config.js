@@ -7,10 +7,10 @@
         // map tells the System loader where to look for things
         map: {
             // our app is within the app folder
-            main: 'js',
+            main: 'js/ts',
             // @NoyauFonctionnel
-            '@NF/nf'      : 'js/nf/nf.js',
-            '@NF/service' : 'js/nf/service.js',
+            '@NF/nf'      : 'js/ts/nf/nf.js',
+            '@NF/service' : 'js/ts/nf/service.js',
             // angular bundles
             '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
             '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
