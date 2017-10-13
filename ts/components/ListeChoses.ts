@@ -7,12 +7,17 @@ const htmlTemplate = `
 		<header class="header">
 			<h1>{{titre}}</h1>
 			<form>
-				<input class="new-todo" placeholder="Que faire?" #newTodo autofocus>
+				<input  #newTodoInput
+				        name        = "newTodoInput"
+				        class       = "new-todo"
+				        placeholder = "Que faire?"
+				        autofocus />
 			</form>
 		</header>
 		<section class="main">
 			<input  class="toggle-all"
 			        type="checkbox"
+			        name="toggleAll"
 			        />
 			<label for="toggle-all">Mark all as complete</label>
 			<ul class="todo-list">
@@ -70,3 +75,4 @@ export class ListeChoses implements OnInit {
         return this.choses;
     }
 }
+

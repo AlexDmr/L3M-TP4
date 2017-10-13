@@ -10,8 +10,11 @@ const htmlTemplate = `
         <label 	class="texte"></label>
         <button class="destroy"></button>
     </div>
-    <form *ngIf="editing">
-            <input 	class		= "edit"/>
+    <form>
+        <input  #newTextInput
+                name    = "newTextInput"
+                class   = "edit"
+                />
     </form>
 `;
 
@@ -21,5 +24,5 @@ const htmlTemplate = `
 })
 export class ItemChose {
     @Input("nf") nf: Chose;
-    @ViewChild("newText") newTextInput: ElementRef;
+    @ViewChild("newTextInput") newTextInput: ElementRef;
 }
