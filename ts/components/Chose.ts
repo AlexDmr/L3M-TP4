@@ -13,8 +13,7 @@ const htmlTemplate = `
     <form>
         <input  #newTextInput
                 name    = "newTextInput"
-                class   = "edit"
-                />
+                class   = "edit"/>
     </form>
 `;
 
@@ -23,6 +22,6 @@ const htmlTemplate = `
     template: htmlTemplate
 })
 export class ItemChose {
-    @Input("nf") nf: Chose;
+    @Input("nf") private nf: Chose;
     @ViewChild("newTextInput") newTextInput: ElementRef;
 }

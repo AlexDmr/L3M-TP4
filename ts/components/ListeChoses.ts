@@ -55,7 +55,7 @@ type filterChose = (c: Chose) => boolean;
 })
 export class ListeChoses implements OnInit {
     @Input() titre: string;
-    public nf: ListeChosesNF;
+    private nf: ListeChosesNF;
     private choses: Chose[] = [];
     private currentFilter: filterChose;
 
